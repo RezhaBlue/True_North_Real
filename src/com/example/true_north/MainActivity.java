@@ -14,7 +14,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Parse.initialize(this, "zfwXcHqiuDIkGFDXCVZhlr1vkNG2PxSbifpMKwhh", "TNV41MwKCQRAsF9qZ8LJuFEZD3sz2P6b81ecfENH");
 		ParseAnalytics.trackAppOpened(getIntent());
+		ParseObject testObject = new ParseObject("TestObject");
+		testObject.put("foo", "bar");
+		testObject.saveInBackground();
 	}
 
 	//This is called when the application is called. The Activity super object calls this by default.
@@ -25,38 +29,38 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
+    	@Override
+    	protected void onStart() {
+        	super.onStart();
+    	}
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
+    	@Override
+    	protected void onRestart() {
+	    super.onRestart();
+    	}
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+    	@Override
+    	protected void onResume() {
+	   super.onResume();
 
-    }
+    	}
 
-    @Override
-    protected void onPause() {
-        super.onPause();
+    	@Override
+    	protected void onPause() {
+	   super.onPause();
 
-    }
+    	}
 
-    @Override
-    protected void onStop() {
-        super.onStop();
+    	@Override
+    	protected void onStop() {
+	    super.onStop();
+	
+    	}
 
-    }
+    	@Override
+    	protected void onDestroy() {
+	    super.onDestroy();
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-    }
+    	}
 
 }
